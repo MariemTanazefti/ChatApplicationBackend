@@ -30,24 +30,24 @@ const JWT_KEY = process.env.JWT_KEY;
    */
    
 const getSingleJob = async (req, res) => {
-  const id = req.params.id;
-  console.log(req.params.id)
-  try {
-    const job = await Job.findById(id);
-    if (job == null) {
-      res.status(404).json({
-        message: "No Data Found with this Id.",
-      });
-    } else {
-      res.status(200).json({ message: "Operation Succeded", job });
-    }
+  try{
+    const id = req.params.id;
+    console.log(req.params.id)
+    const [job] = await Job.findById(id);
+    res.status(200).json({ message: "Operation Succeded", job });
 
-  } catch (err) {
+
+  }catch(err){
     res.status(404).json({
-      message: "No Data Found with this Id.",
+      message: "No Data Found.",
     });
     throw err;
+    
+
+
   }
+  
+      
 };
 
 

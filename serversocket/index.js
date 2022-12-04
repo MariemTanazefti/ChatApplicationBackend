@@ -17,14 +17,14 @@ wss.on("connection", function connection(ws) {
     });
   });
 });
-app.use(bodyParser.json());
-app.use(express.json());
+//app.use(bodyParser.json());
+//app.use(express.json());
 app.use('/chat',userRoute);
-app.use((req, res) => {
+/* app.use((req, res) => {
  res.setHeader('Access-Control-Allow-Origin','GET,POST,PUT,DELETE');
  res.setHeader('Access-Control-Allow-Methods','*');
  res.setHeader('Access-Control-Allow-Headers','Content-type,Authorization');
-});
+}); */
 server.listen(8080, () => {
   console.log("Listening to port 8080");
 }); 
