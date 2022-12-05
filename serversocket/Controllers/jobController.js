@@ -59,7 +59,7 @@ const getSingleJob = async (req, res) => {
  
     try{
      title = req.body.title;
-     
+     console.log(req.body.title)
      details= req.body.details;
      societyImage= req.body.societyImage;
      societyName= req.body.societyName;
