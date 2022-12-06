@@ -15,7 +15,7 @@ const JWT_KEY = process.env.JWT_KEY;
     try {
         console.log("ddd")
       const[JobsList] = await Job.getAll();
-      res.status(200).json({ message: "Operation Succeded", JobsList });
+      res.status(200).json({JobsList });
     } catch (err) {
       res.status(404).json({
         message: "No Data Found.",
@@ -34,7 +34,7 @@ const getSingleJob = async (req, res) => {
     const id = req.params.id;
     console.log(req.params.id)
     const [job] = await Job.findById(id);
-    res.status(200).json({ message: "Operation Succeded", job });
+    res.status(200).json({  job });
 
 
   }catch(err){
@@ -67,7 +67,7 @@ const getSingleJob = async (req, res) => {
      location= req.body.location;
      skills= req.body.skills;
      const newjob= await Job.save(title,details,societyImage,societyName,salary,location,skills);
-     res.status(201).json({ message: "Operation Succeded", newjob}); 
+     res.status(201).json({newjob}); 
  
  
     }catch(err){
@@ -90,7 +90,7 @@ const getSingleJob = async (req, res) => {
       id = req.params.id;
     
       const delJob= await Job.delete(id);
-      res.status(201).json({ message: "Operation Succeded", delJob }); 
+      res.status(201).json({ delJob }); 
   
   
      }catch(err){
