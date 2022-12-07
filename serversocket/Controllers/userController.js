@@ -124,7 +124,7 @@ const Login = async (req, res) => {
     console.log("login")
     email=req.body.email;
     password=req.body.password;
-    const user1= await User.findOne(email,password);
+    const [user1]= await User.findOne(email,password);
     if(email && password){
       res.status(201).json({user1 }); 
 
