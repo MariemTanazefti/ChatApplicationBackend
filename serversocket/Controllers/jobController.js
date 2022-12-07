@@ -1,4 +1,5 @@
 var Job = require("../models/job")
+var User = require("../models/user")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const JWT_KEY = process.env.JWT_KEY;
@@ -103,6 +104,18 @@ const getSingleJob = async (req, res) => {
   
   };
 
+  const ApplyJob = async (req, res) => {
+    try{
+      
+
+
+
+
+    }catch(err){
+
+    }
+  }
+
 
 
 
@@ -111,4 +124,5 @@ const getSingleJob = async (req, res) => {
     NewJobs,
     getSingleJob,
     DeleteJob,
+    ApplyJob
   }    

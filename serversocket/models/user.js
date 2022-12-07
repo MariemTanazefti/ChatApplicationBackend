@@ -11,10 +11,10 @@ static save(name,phonenNumber,adresse,email,password,profile){
     
 }
 
-static update(id,name,phoneNumber,adresse,email,password){
-    console.log([name,phoneNumber,adresse,email,password,id])
-    return db.execute('update user SET name = ?, phoneNumber = ?, adresse = ?, email = ?, password = ? where id = ?',
-    [name,phoneNumber,adresse,email,password,id])
+static update(id,name,phoneNumber,adresse,email,password,cv){
+    console.log([name,phoneNumber,adresse,email,password,cv,id])
+    return db.execute('update user SET name = ?, phoneNumber = ?, adresse = ?, email = ?, password = ?, cv = ? where id = ?',
+    [name,phoneNumber,adresse,email,password,cv,id])
 
 }
 

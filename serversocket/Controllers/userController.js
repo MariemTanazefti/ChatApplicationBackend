@@ -1,4 +1,5 @@
 var  User  = require("../models/user");
+var Job = require("../models/job")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const JWT_KEY = process.env.JWT_KEY;
@@ -95,9 +96,10 @@ const NewRecruiter = async (req, res, next) =>{
     adresse = req.body.adresse;
     email = req.body.email;
     password = req.body.password;
+    cv = req.body.cv;
     //profile= "Recruiter";
   
-    const user1= await User.update(id,name1,phoneNumber,adresse,email,password);
+    const user1= await User.update(id,name1,phoneNumber,adresse,email,password,cv);
     res.status(201).json({user1 }); 
 
 
