@@ -139,10 +139,28 @@ const Login = async (req, res) => {
   
   }  
 
+/**
+   * get user par id
+   */
+   
+ const getSingleUser = async (req, res) => {
+  try{
+    const id = req.params.id;
+    console.log(req.params.id)
+    const [user1] = await User.findById(id);
+    res.status(200).json({  user1 });
 
-  /**
- * Logout User.
- */
+
+  }catch(err){
+    res.status(404).json({
+      message: "No Data Found.",
+    });
+    throw err;
+    
+
+
+  }
+}
 
 
 
@@ -160,6 +178,7 @@ getAllUser,
 NewJobseeker,
 NewRecruiter,
 UpdateUser,
-Login
+Login,
+getSingleUser
 
 }

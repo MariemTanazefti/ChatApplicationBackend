@@ -15,6 +15,7 @@ router.post("/users_jobseeker", UserController.NewJobseeker);
 router.post("/users_recruiter", UserController.NewRecruiter);
 router.put("/users/:id", UserController.UpdateUser);
 router.post("/Login", UserController.Login);
+router.get("/users/:id", UserController.getSingleUser);
 
 
 

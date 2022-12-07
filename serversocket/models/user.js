@@ -24,6 +24,11 @@ static findOne(email,password){
 
 }
 
+static findById(id){
+    return db.execute('select * from user where id = ?',[id]);
+
+}
+
 
 
 
