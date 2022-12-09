@@ -32,9 +32,9 @@ const JWT_KEY = process.env.JWT_KEY;
    
 const getSingleJob = async (req, res) => {
   try{
-    const id = req.params.id;
-    console.log(req.params.id)
-    const [job] = await Job.findById(id);
+    const idJob = req.params.idJob;
+    console.log(req.params.idJob)
+    const [job] = await Job.findById(idJob);
     res.status(200).json({  job });
 
 
@@ -103,7 +103,7 @@ const getSingleJob = async (req, res) => {
      }
   
   };
-
+/* 
   const ApplyJob = async (req, res) => {
     try{
       let [Response] = await Job.findid(req.params.id);
@@ -114,7 +114,7 @@ const getSingleJob = async (req, res) => {
         message:"errer"
       
     })
-  }}
+  }} */
 
 
 
@@ -124,5 +124,5 @@ const getSingleJob = async (req, res) => {
     NewJobs,
     getSingleJob,
     DeleteJob,
-    ApplyJob
+    //ApplyJob
   }    

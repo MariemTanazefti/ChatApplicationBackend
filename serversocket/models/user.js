@@ -11,10 +11,10 @@ static save(name,phonenNumber,adresse,email,password,profile){
     
 }
 
-static update(id,name,phoneNumber,adresse,email,password,cv){
-    console.log([name,phoneNumber,adresse,email,password,cv,id])
-    return db.execute('update user SET name = ?, phoneNumber = ?, adresse = ?, email = ?, password = ?, cv = ? where id = ?',
-    [name,phoneNumber,adresse,email,password,cv,id])
+static update(idUser,name,phoneNumber,adresse,email,password,cv){
+    console.log([name,phoneNumber,adresse,email,password,cv,idUser])
+    return db.execute('update user SET name = ?, phoneNumber = ?, adresse = ?, email = ?, password = ?, cv = ? where idUser = ?',
+    [name,phoneNumber,adresse,email,password,cv,idUser])
 
 }
 
@@ -24,8 +24,8 @@ static findOne(email,password){
 
 }
 
-static findById(id){
-    return db.execute('select * from user where id = ?',[id]);
+static findById(idUser){
+    return db.execute('select * from user where idUser = ?',[idUser]);
 
 }
 

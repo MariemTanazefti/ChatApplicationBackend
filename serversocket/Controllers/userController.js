@@ -88,8 +88,8 @@ const NewRecruiter = async (req, res, next) =>{
  const UpdateUser = async (req, res) => {
   try{
     console.log("aaaaa")
-    id = req.params.id;
-    console.log(req.params['id']);
+    idUser = req.params.idUser;
+    console.log(req.params['idUser']);
     name1 = req.body.name;
     console.log(name1);
     phoneNumber=  req.body.phoneNumber;
@@ -99,7 +99,7 @@ const NewRecruiter = async (req, res, next) =>{
     cv = req.body.cv;
     //profile= "Recruiter";
   
-    const user1= await User.update(id,name1,phoneNumber,adresse,email,password,cv);
+    const user1= await User.update(idUser,name1,phoneNumber,adresse,email,password,cv);
     res.status(201).json({user1 }); 
 
 
@@ -147,9 +147,10 @@ const Login = async (req, res) => {
    
  const getSingleUser = async (req, res) => {
   try{
-    const id = req.params.id;
-    console.log(req.params.id)
-    const [user1] = await User.findById(id);
+    const idUser = req.params.idUser;
+    console.log(req.params.idUser)
+    console.log("hello")
+    const [user1] = await User.findById(idUser);
     res.status(200).json({  user1 });
 
 
@@ -160,6 +161,8 @@ const Login = async (req, res) => {
     throw err;
     
 
+
+  
 
   }
 }
