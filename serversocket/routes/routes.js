@@ -15,7 +15,9 @@ router.post("/users_jobseeker", UserController.NewJobseeker);
 router.post("/users_recruiter", UserController.NewRecruiter);
 router.put("/users/:id", UserController.UpdateUser);
 router.post("/Login", UserController.Login);
-router.get("/users/:id", UserController.getSingleUser);
+router.get("users/:id", UserController.getSingleUser)
+
+
 
 
 
@@ -34,6 +36,7 @@ router.get("/users/:id", UserController.getSingleUser);
  router.post("/add_job",JobController.NewJobs);
  router.get("/jobs/:id",JobController.getSingleJob);
  router.delete("/jobs/:id",JobController.DeleteJob);
-
+ router.get("/jobsUser/:id",JobController.ApplyJob)
+ 
 
 module.exports = router;

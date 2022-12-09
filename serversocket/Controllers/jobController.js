@@ -106,15 +106,15 @@ const getSingleJob = async (req, res) => {
 
   const ApplyJob = async (req, res) => {
     try{
-      
-
-
-
-
+      let [Response] = await Job.findid(req.params.id);
+      console.log(req.params.id)
+      res.status(200).json(Response);
     }catch(err){
-
-    }
-  }
+      res.status(404).json({
+        message:"errer"
+      
+    })
+  }}
 
 
 
