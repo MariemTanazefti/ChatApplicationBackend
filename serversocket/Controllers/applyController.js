@@ -14,6 +14,10 @@ const JWT_KEY = process.env.JWT_KEY;
       
     })
   }} */
+  
+    /**
+ * New applyjob.
+ */
    
   const NewApplyJob = async (req, res) => {    
    /*  try {
@@ -50,9 +54,28 @@ const JWT_KEY = process.env.JWT_KEY;
  
   };
 
+    
+    /**
+ * Get all applyjob.
+ */
+    const getAllApplyJobs = async (req, res) => {
+      try {
+      const[ApplyJobsList] = await Apply.getAll();
+      res.status(200).json({ApplyJobsList });
+    } catch (err) {
+      res.status(404).json({
+        message: "No Data Found.",
+      });
+      throw err;
+    }
+    };
+   
+  
+
 
 
   module.exports = {
     //ApplyJob,
-    NewApplyJob
+    NewApplyJob,
+    getAllApplyJobs
   }    

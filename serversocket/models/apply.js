@@ -11,6 +11,11 @@ module.exports= class Apply{
 
     }
 
+    static getAll(){
+        return db.execute("select * from applyjob")
+
+    }
+
 
 
 } 

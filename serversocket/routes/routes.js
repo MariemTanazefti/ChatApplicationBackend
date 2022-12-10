@@ -19,13 +19,6 @@ router.get("users/:idUser", UserController.getSingleUser)
 
 
 
-
-
-
-/* router.get("/users/:id", UserController.getSingleUser);
- */
-
-
 /**
  * Job APIs Routes
  */
@@ -36,11 +29,14 @@ router.get("users/:idUser", UserController.getSingleUser)
  router.post("/add_job",JobController.NewJobs);
  router.get("/jobs/:idJob",JobController.getSingleJob);
  router.delete("/jobs/:idJob",JobController.DeleteJob);
-// router.get("/jobsUser/:id",JobController.ApplyJob)
 
 
+/**
+ * Apply Job APIs Routes
+ */
 const ApplyController = require("../Controllers/applyController");
-router.post("/jobsApply",ApplyController.NewApplyJob)
+router.post("/add_jobsApply",ApplyController.NewApplyJob);
+router.get("/jobsApply",ApplyController.getAllApplyJobs)
  
 
 module.exports = router;
