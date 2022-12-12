@@ -34,9 +34,20 @@ router.get("users/:idUser", UserController.getSingleUser)
 /**
  * Apply Job APIs Routes
  */
-const ApplyController = require("../Controllers/applyController");
+const ApplyController = require("../controllers/applyController");
 router.post("/add_jobsApply",ApplyController.NewApplyJob);
 router.get("/jobsApply",ApplyController.getAllApplyJobs)
+
+
+/**
+ * Pending APIs Routes
+ */
+const PendingController = require("../controllers/pendingController");
+router.post("/acceptPending",PendingController.acceptPending);
+router.delete("/deletePending",PendingController.deletePending);
+
+
+
  
 
 module.exports = router;
