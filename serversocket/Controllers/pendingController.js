@@ -5,7 +5,7 @@ const JWT_KEY = process.env.JWT_KEY;
 
 const acceptPending = async(req,res) =>{
     const idPending= req.params.idPending;
-    if(idPending.getAction().equals("add")){
+    
         title = req.body.title;
         details= req.body.details;
         societyImage= req.body.societyImage;
@@ -13,23 +13,23 @@ const acceptPending = async(req,res) =>{
         salary= req.body.salary;
         location= req.body.location;
         skills= req.body.skills;
-        const newjobPending= await Pending.save(title,details,societyImage,societyName,salary,location,skills);
+        const newjobPending= await Pending.accept(title,details,societyImage,societyName,salary,location,skills);
         res.status(201).json({newjobPending}); 
-        idPending.setStatus("accepted")
-    }
+      
+    
 
 }
-const deletePending = async(req,res) =>{
+  const deletePending = async(req,res) =>{
     const idPending= req.params.idPending;
-    if(idPending.getAction().equals("delete")){
-        idJob=req.params.idJob;
-        const newjobPending= await Pending.delete(idJob);
+    
+        //idJob=req.params.idJob;
+        const newjobPending= await Pending.delete(idPending);
         res.status(201).json({newjobPending}); 
-        idPending.setStatus("denied")
-    }
+        //idPending.setStatus("denied")
+    
 
 
-}
+}  
 
 
 

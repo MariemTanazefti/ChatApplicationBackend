@@ -8,7 +8,7 @@ module.exports= class Job{
 
     static save(title,details,societyImage,societyName,salary,location,skills){
         console.log([title,details,societyImage,societyName,salary,location,skills])
-        return db.execute('insert into jobs (title,details,societyImage,societyName,salary,location,skills) values (?,?,?,?,?,?,?)',[title,details,societyImage,societyName,salary,location,skills])
+        return db.execute('insert into pending (title,details,societyImage,societyName,salary,location,skills) values (?,?,?,?,?,?,?)',[title,details,societyImage,societyName,salary,location,skills])
 
     }
 
