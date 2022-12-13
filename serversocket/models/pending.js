@@ -14,4 +14,8 @@ module.exports= class Pending{
         return db.execute('delete from pending where idPending = ?',[idPending]);
     }
 
+    static getAll(){
+        return db.execute('select * from pending');
+    }
+
 }

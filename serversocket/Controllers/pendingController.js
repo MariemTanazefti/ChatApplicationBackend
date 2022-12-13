@@ -31,6 +31,26 @@ const acceptPending = async(req,res) =>{
 
 }  
 
+/**
+ * Get all Jobs Pending.
+ */
+
+
+
+
+const getAllJobPending = async (req, res) => {
+    try {
+        console.log("ddd")
+      const[JobsListPending] = await Pending.getAll();
+      res.status(200).json({JobsListPending});
+    } catch (err) {
+      res.status(404).json({
+        message: "No Data Found.",
+      });
+      throw err;
+    }
+  };
+
 
 
 
@@ -40,5 +60,6 @@ const acceptPending = async(req,res) =>{
 
 module.exports = {
     acceptPending,
-    deletePending
+    deletePending,
+    getAllJobPending
 }

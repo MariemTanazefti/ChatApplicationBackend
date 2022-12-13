@@ -45,6 +45,7 @@ router.get("/jobsApply",ApplyController.getAllApplyJobs)
 const PendingController = require("../controllers/pendingController");
 router.post("/acceptPending",PendingController.acceptPending);
 router.delete("/deletePending/:idPending",PendingController.deletePending);
+router.get("/pendingJob",PendingController.getAllJobPending);
 
 
 
